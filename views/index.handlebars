@@ -1,1 +1,13 @@
 <h1>Hamburger Time!</h1>
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+        <h3> Burgers</h3>
+        <li class="btn danger">{{this.burger_name}}</li>
+    {{/unless}}
+    {{#if this.devoured}}
+      <h3> Devoured </h3>
+        <li class="btn primary">{{this.burger_name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
