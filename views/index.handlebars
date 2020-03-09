@@ -1,13 +1,52 @@
-<h1>Hamburger Time!</h1>
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-        <h3> Burgers</h3>
-        <li class="btn danger">{{this.burger_name}}</li>
-    {{/unless}}
-    {{#if this.devoured}}
-      <h3> Devoured </h3>
-        <li class="btn primary">{{this.burger_name}}</li>
-    {{/if}}
-  {{/each}}
-</ul>
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="jumbotron col-6">
+      <h1 >Eat-Da-Burger!</h1>
+    </div>
+  <img src="/images/hamburger.gif" alt="" class="col-6">
+    
+
+    <div class="col-6 jumbotron"><h3>Burgers</h3>
+    
+    {{#each burgers}}
+      {{#unless this.devoured}}
+          <div>
+            <div style="width:50%" class="d-inline-block">
+              {{this.burger_name}}
+            </div>
+            <div style="width:50%" class="d-inline">
+               <button class="btn-primary devour-button" data-id = {{this.id}}> Devour it</button>
+            </div>
+          </div>
+      {{/unless}}
+    {{/each}}
+  </div>
+
+
+  <div class=" col-6 jumbotron">
+    <h3>Devoured</h3>
+
+    {{#each burgers}}
+      {{#if this.devoured}}
+          <div>{{this.burger_name}}</div>
+      {{/if}}
+    {{/each}}
+  </div>
+
+  </div>
+
+  <div>
+    <h3>Add A Burger</h3>
+    <form >
+    <label for="burgerName">Burger Name</label>
+    <input type="text" id="burgerName"></div>
+    <button type="submit" id="add-burger">Add Burger </button>
+
+    </form>
+  </div>
+
+
+</div>

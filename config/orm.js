@@ -15,6 +15,8 @@ const orm = {
 
      },
      updateOne: function(tableName, objUpdated, conditionObj, cb){
+
+          //update `burgers` set burger_name = 'bob'  where id='1' 
           connection.query("update ?? set ? where ?", [tableName, objUpdated, conditionObj], (err,data) =>{ 
                if(err) console.log(err);
                cb(data);
